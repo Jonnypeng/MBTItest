@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'w-app';
+  title = 'MBTI-16种人格类型测试';
 }

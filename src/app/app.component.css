@@ -1,0 +1,10 @@
+.text-center{
+    text-align:center;
+}
+
+.title {
+    background: gray;
+    color: white;
+    padding: 5%;
+    box-sizing: border-box;
+}
