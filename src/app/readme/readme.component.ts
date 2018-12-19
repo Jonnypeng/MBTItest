@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input ,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-readme',
@@ -8,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class ReadmeComponent implements OnInit {
   readMeClass:string = "";  
-
+  @Input()readed:boolean;
+  @Output()change:EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
   }
 
   readMeBtnHandle(){
-    this.readMeClass = "none";
+   this.readed = false;
+   this.change.emit(this.readed);
   }
 
 }

@@ -3,7 +3,8 @@
     {{ title }}!
   </h3>
   <div class="container">
-    <app-readme></app-readme>
+    <app-qa *ngIf="!isRead"></app-qa>
+    <app-readme [readed]="isRead" (change)="isReadChange($event)"></app-readme>
   </div>
 
 

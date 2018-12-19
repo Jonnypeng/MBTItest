@@ -5,6 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'MBTI-16种人格类型测试';
+  isRead:boolean = true;
+
+  isReadChange(event:boolean){
+    this.isRead = event;
+    console.log(this.isRead);
+  }
 }

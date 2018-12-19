@@ -4,11 +4,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ReadmeComponent } from './readme/readme.component';
+import { QaComponent } from './qa/qa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReadmeComponent
+    ReadmeComponent,
+    QaComponent
   ],
   imports: [
     BrowserModule,
