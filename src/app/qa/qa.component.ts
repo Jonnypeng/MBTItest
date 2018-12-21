@@ -29,8 +29,10 @@ export class QaComponent implements OnInit {
     }else if(value > 5){
         this.qaes[this.id][tag1].value = 5;
     }else{
-        this.qaes[this.id][tag2].value = 5 - this.qaes[this.id][tag1].value;
+        this.qaes[this.id][tag1].value = value;
     }
+       
+    this.qaes[this.id][tag2].value = 5 - this.qaes[this.id][tag1].value;
 
   }
 
