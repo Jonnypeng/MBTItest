@@ -37,3 +37,20 @@ input[type="number"] {
     margin-top:2%;
 }
 
+div.typeTitle{
+    background: #cecece;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    letter-spacing: 0.1rem;
+}
+
+#gotoBing{
+    width:25%;
+    position:relative;
+    left:37.5%;
+    margin-top:15%;
+}
+

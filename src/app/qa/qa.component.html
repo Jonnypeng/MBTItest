@@ -1,4 +1,4 @@
-<div id="qa" class="qa">
+<div id="qa" class="qa" *ngIf="!gameEnd">
   <div class="qIndex badge badge-info">{{id + 1}}</div>
   <div id="question" class="question">{{qaes[id].q}}</div>
   <ul id="answer">
@@ -14,4 +14,10 @@
     </li>
   </ul>
   <button class="next btn btn-primary" (click)="onBtntext()">{{btnText}}</button>
+</div>
+<div id="type" *ngIf="gameEnd">
+  <div class="typeTitle">
+  {{type[0] + type[1] + type[2] + type[3]}}
+  </div>
+  <a id="gotoBing" href="{{typeUrl}}" class="btn btn-primary">了解详情</a>
 </div>

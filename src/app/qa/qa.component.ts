@@ -13,6 +13,8 @@ export class QaComponent implements OnInit {
   qaes = qas;
   btnText:string;
   type:string[] = ["","","",""];
+  typeUrl:string;
+  gameEnd:boolean = false;
 
   constructor() { 
   }
@@ -82,6 +84,10 @@ export class QaComponent implements OnInit {
       this.type[3] = result.P > result.J ? "P" : "J";
 
       console.log(this.type);
+
+      this.gameEnd = true;
+
+      this.typeUrl = "https://cn.bing.com/search?q=mbti+" + this.type.join("");
 
   }
 
