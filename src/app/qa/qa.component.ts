@@ -12,6 +12,7 @@ export class QaComponent implements OnInit {
   id:number = 0;
   qaes = qas;
   btnText:string;
+  type:string[] = ["","","",""];
 
   constructor() { 
   }
@@ -75,7 +76,12 @@ export class QaComponent implements OnInit {
           }
       });
 
-       
+      this.type[0] = result.E > result.I ? "E" : "I";
+      this.type[1] = result.N > result.S ? "N" : "S";
+      this.type[2] = result.T > result.F ? "T" : "F";
+      this.type[3] = result.P > result.J ? "P" : "J";
+
+      console.log(this.type);
 
   }
 
