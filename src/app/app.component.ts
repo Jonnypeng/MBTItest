@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'MBTI TEST';
+  title = 'MBTI人格类型测试';
   isRead:boolean = true;
 
   isReadChange(event:boolean){
