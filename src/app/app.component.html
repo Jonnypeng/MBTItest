@@ -1,11 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
   <h3 class="title text-center">
-    <img src="assets/img/logo.png" alt="">
+    <img src="assets/img/logo.png" alt="" class="logo">
     {{ title }}!
   </h3>
   <div class="container">
-    <app-qa *ngIf="!isRead"></app-qa>
-    <app-readme [readed]="isRead" (change)="isReadChange($event)"></app-readme>
+    <router-outlet></router-outlet>
+    <!-- <app-qa *ngIf="!isRead"></app-qa>
+    <app-readme [readed]="isRead" (change)="isReadChange($event)"></app-readme> -->
   </div>
 
 

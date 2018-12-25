@@ -6,3 +6,7 @@
 .block{
     display:block;
 }
+
+img.logo {
+    width: 5%;
+}

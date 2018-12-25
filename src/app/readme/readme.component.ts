@@ -8,16 +8,16 @@ import { Component, OnInit,Input ,Output,EventEmitter} from '@angular/core';
 
 export class ReadmeComponent implements OnInit {
   readMeClass:string = "";  
-  @Input()readed:boolean;
-  @Output()change:EventEmitter<boolean> = new EventEmitter<boolean>();
+  // @Input()readed:boolean;
+  //@Output()change:EventEmitter<boolean> = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  readMeBtnHandle(){
-   this.readed = false;
-   this.change.emit(this.readed);
-  }
+  // readMeBtnHandle(){
+  //  this.readed = false;
+  //  this.change.emit(this.readed);
+  // }
 
 }

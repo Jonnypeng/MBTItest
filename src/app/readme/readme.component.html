@@ -1,4 +1,4 @@
-<div id="readMe" class="{{readMeClass}}" *ngIf="readed">
+<div id="readMe" class="{{readMeClass}}">
 <h5>注意事项</h5>
 <ol>
   <li>请在心态平和及时间充足的情况下才开始答题。
@@ -16,6 +16,8 @@ B．只跟几个亲密挚友呆在一起。 （ 1 ）<br/>
 </blockquote>
 <p>如果你认为自己参与社交聚会时常常能认识新朋友，但偶尔又会只跟几个亲密挚友呆在一起，那么在该例子中，你可以给总是能认识新朋友打4分，而给只跟几个亲密挚友呆在一起打1分。当然，根据不同程度你可以选择3+2或者5+0，也可以是其他的组合。</p>
 
-<button id="readMeBtn" class="btn btn-primary" (click)="readMeBtnHandle()">我已知晓</button>
+<nav>
+  <a id="readMeBtn" class="btn btn-primary" routerLink="/qa">我已知晓</a>
+</nav>
 
 </div>

@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'MBTI TEST';
-  isRead:boolean = true;
+  //isRead:boolean = true;
 
-  isReadChange(event:boolean){
-    this.isRead = event;
-    console.log(this.isRead);
-  }
+  // isReadChange(event:boolean){
+  //   this.isRead = event;
+  //   console.log(this.isRead);
+  // }
 }

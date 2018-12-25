@@ -13,6 +13,7 @@ input[type="number"] {
     width: 6vw;
     height: 6vw;
     text-align:center;
+    font-size:0.6rem;
 }
 
 .qIndex {

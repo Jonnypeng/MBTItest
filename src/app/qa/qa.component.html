@@ -5,12 +5,12 @@
     <li>
       <span>A.</span>
       <span class="answer">{{qaes[id].A.text}}</span>
-      <input type="number" [(ngModel)]="qaes[id].A.value" (keyup)="onChange($event.target.value,'A','B')" />
+      <input type="number" pattern="\d*" [(ngModel)]="qaes[id].A.value" (keyup)="onChange($event.target.value,'A','B')" />
     </li>
     <li>
       <span>B.</span>
       <span class="answer">{{qaes[id].B.text}}</span>
-      <input type="number"  [(ngModel)]="qaes[id].B.value" (keyup)="onChange($event.target.value,'B','A')" />
+      <input type="number"  pattern="\d*" [(ngModel)]="qaes[id].B.value" (keyup)="onChange($event.target.value,'B','A')" />
     </li>
   </ul>
   <button class="next btn btn-primary" (click)="onBtntext()">{{btnText}}</button>
