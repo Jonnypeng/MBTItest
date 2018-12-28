@@ -1,16 +1,28 @@
 <div id="qa" class="qa" *ngIf="!gameEnd">
-  <div class="qIndex badge badge-info">{{id + 1}}/48</div>
+  <div class="qIndex badge badge-info">{{id + 1}}</div>
   <div id="question" class="question">{{qaes[id].q}}</div>
   <ul id="answer">
     <li>
-      <span>A.</span>
-      <span class="answer">{{qaes[id].A.text}}</span>
-      <input type="number" pattern="\d*" [(ngModel)]="qaes[id].A.value" (keyup)="onChange($event.target.value,'A','B')" />
+      <div class="answer"><span class="badge badge-danger">{{qaes[id].A.value}}分</span><br />A.{{qaes[id].A.text}}</div>
+      <div class="numberBox">
+        <input type="button" class="number" value="0" (click)="onChange($event.target.value,'A','B')" />
+        <input type="button" class="number" value="1" (click)="onChange($event.target.value,'A','B')" />
+        <input type="button" class="number" value="2" (click)="onChange($event.target.value,'A','B')" />
+        <input type="button" class="number" value="3" (click)="onChange($event.target.value,'A','B')" />
+        <input type="button" class="number" value="4" (click)="onChange($event.target.value,'A','B')" />
+        <input type="button" class="number" value="5" (click)="onChange($event.target.value,'A','B')" />
+      </div>
     </li>
     <li>
-      <span>B.</span>
-      <span class="answer">{{qaes[id].B.text}}</span>
-      <input type="number"  pattern="\d*" [(ngModel)]="qaes[id].B.value" (keyup)="onChange($event.target.value,'B','A')" />
+      <div class="answer"><span class="badge badge-danger">{{qaes[id].B.value}}分</span><br />B.{{qaes[id].B.text}}</div>
+      <div class="numberBox">
+        <input type="button" class="number" value="0" (click)="onChange($event.target.value,'B','A')" />
+        <input type="button" class="number" value="1" (click)="onChange($event.target.value,'B','A')" />
+        <input type="button" class="number" value="2" (click)="onChange($event.target.value,'B','A')" />
+        <input type="button" class="number" value="3" (click)="onChange($event.target.value,'B','A')" />
+        <input type="button" class="number" value="4" (click)="onChange($event.target.value,'B','A')" />
+        <input type="button" class="number" value="5" (click)="onChange($event.target.value,'B','A')" />
+      </div>
     </li>
   </ul>
   <button class="next btn btn-primary" (click)="onBtntext()">{{btnText}}</button>

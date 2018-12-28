@@ -72,15 +72,11 @@ export class QaComponent implements OnInit {
   }
 
   onChange(value,tag1,tag2){
-    if(value < 0){
-        this.qaes[this.id][tag1].value = 0;
-    }else if(value > 5){
-        this.qaes[this.id][tag1].value = 5;
-    }else{
-        this.qaes[this.id][tag1].value = value;
-    }
-       
+    console.log(value);
+    this.qaes[this.id][tag1].value = value;
     this.qaes[this.id][tag2].value = 5 - this.qaes[this.id][tag1].value;
+
+    console.log(this.qaes[this.id]);
 
   }
 

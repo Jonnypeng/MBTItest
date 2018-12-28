@@ -56,3 +56,39 @@ div.typeTitle{
     margin-top:15%;
 }
 
+#answer li {
+    border: 1px solid black;
+}
+
+.number {
+    width: 13.5vw;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 13.5vw;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+.number:active{
+    background:yellow;
+}
+.number:focus{
+    background:red;
+    color:white;
+}
+
+.numberBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.answer {
+    background: #d8d8d8;
+    color: black;
+    text-align: center;
+    padding: 5%;
+}
