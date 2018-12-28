@@ -1,4 +1,22 @@
-export let qas = [
+
+class Topic{
+    text:string;
+    value:number|string;
+    tag:string;
+}
+
+export class Qas {
+    q:string;
+    A:Topic;
+    B:Topic;
+
+    constructor(_q:string,_A:Topic,_B:Topic){
+        this.q = _q;
+        this.A = _A;
+        this.B = _B;    
+    }
+}
+/* export let qas = [
     {
         "q": "当你遇到新朋友时,你",             // 1 
         "A": {
@@ -624,6 +642,7 @@ export let qas = [
         }
     }
 ]
+*/
 
 
 export let result = {
