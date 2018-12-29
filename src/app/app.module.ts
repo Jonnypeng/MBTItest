@@ -18,7 +18,7 @@ import { AboutComponent } from './about/about.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule,
+    NgbModule.forRoot(),
     FormsModule,
     AppRoutingModule
   ],

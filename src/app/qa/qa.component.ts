@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Qas , result } from '../question';
 
 
@@ -6,6 +6,7 @@ import { Qas , result } from '../question';
 //   value:number;
 //   selected:boolean;
 // }
+
 
 class Card{
   value:number;
@@ -30,6 +31,8 @@ export class QaComponent implements OnInit {
   type:string[] = ["","","",""];
   typeUrl:string;
   gameEnd:boolean = false;
+  alertInfo:object;
+  alertView:boolean = false;
 
   prevBtn:any = {
     "A":{value:""},
@@ -110,7 +113,10 @@ export class QaComponent implements OnInit {
       this.createCards();
   }
 
+
   onChange(target,tag1,tag2){
+    this.alertView = false;
+
     this.qaes[this.id][tag1].value = target.value;
     this.qaes[this.id][tag2].value = 5 - this.qaes[this.id][tag1].value;
 
@@ -137,11 +143,15 @@ export class QaComponent implements OnInit {
       this.onTotalResult();
       return false;
     }else if(this.qaes[this.id].A.value === 0 && this.qaes[this.id].B.value === 0 ){
-        alert("您尚未选择答案");
+       //this.alertInfo.alert();
+       //this.isSelected = false;
+       this.alertView = true;
+       console.log(this.alertInfo);
     }else{
       this.id+=1;
       this.cards.A[this.prevBtn.A.value].selected = false;
       this.cards.B[this.prevBtn.B.value].selected = false;
+      this.alertView = false;
     }
   }
 
