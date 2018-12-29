@@ -30,10 +30,6 @@ export class QaComponent implements OnInit {
   type:string[] = ["","","",""];
   typeUrl:string;
   gameEnd:boolean = false;
-  // prevBtn:any = {
-  //   "tag":"",
-  //   "value":""
-  // };
 
   prevBtn:any = {
     "A":{value:""},
@@ -114,31 +110,21 @@ export class QaComponent implements OnInit {
       this.createCards();
   }
 
-  resetBtn(){
-      let toEmpty = function (arr){
-       arr.forEach(function (v){
-            v.selected = false;
-        });
-      }
-
-      toEmpty(this.cards.A);
-      toEmpty(this.cards.B);
-  }
-
-
   onChange(target,tag1,tag2){
     this.qaes[this.id][tag1].value = target.value;
     this.qaes[this.id][tag2].value = 5 - this.qaes[this.id][tag1].value;
 
     if(this.prevBtn.A.value !== ""){
-      this.resetBtn();
+      //this.resetBtn();
+      this.cards[tag1][this.prevBtn[tag1].value].selected = false;
+      this.cards[tag2][this.prevBtn[tag2].value].selected = false;
     }
 
     this.cards[tag1][target.value].selected = true;
     this.cards[tag2][5 - target.value].selected = true;
 
-    this.prevBtn.A.value = target.value;
-    this.prevBtn.B.value = 5 - target.value;
+    this.prevBtn[tag1].value = target.value;
+    this.prevBtn[tag2].value = 5 - target.value;
 
     /*go do ing*/
   }
@@ -154,7 +140,8 @@ export class QaComponent implements OnInit {
         alert("您尚未选择答案");
     }else{
       this.id+=1;
-      this.resetBtn();
+      this.cards.A[this.prevBtn.A.value].selected = false;
+      this.cards.B[this.prevBtn.B.value].selected = false;
     }
   }
 
