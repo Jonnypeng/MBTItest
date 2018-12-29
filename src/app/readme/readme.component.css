@@ -1,4 +1,7 @@
-button#readMeBtn {
+a#readMeBtn {
     float: right;
-    padding-bottom: 20%;
+}
+
+div#readMe {
+    margin: 5% 0% 26% 0%;
 }
