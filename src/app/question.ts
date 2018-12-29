@@ -17,7 +17,6 @@ export class Qas {
     }
 }
 
-
 export let result = {
     "E": 0,
     "I": 0,

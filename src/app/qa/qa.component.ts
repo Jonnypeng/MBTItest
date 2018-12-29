@@ -1,12 +1,27 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { Qas , result } from '../question';
 
+
+// interface card{
+//   value:number;
+//   selected:boolean;
+// }
+
+class Card{
+  value:number;
+  selected:boolean;
+  constructor(_value:number,_selected:boolean){
+    this.value = _value;
+    this.selected = _selected;
+  }
+}
+
+
 @Component({
   selector: 'app-qa',
   templateUrl: './qa.component.html',
   styleUrls: ['./qa.component.css']
 })
-
 
 export class QaComponent implements OnInit {
   id:number = 0;
@@ -15,6 +30,15 @@ export class QaComponent implements OnInit {
   type:string[] = ["","","",""];
   typeUrl:string;
   gameEnd:boolean = false;
+  prevBtn:any = {
+    "tag":"",
+    "value":""
+  };
+  cards:any = {
+    "A":[],
+    "B":[]
+  };
+
 
   constructor() { 
     this.qaes[0] = new Qas("当你遇到新朋友时,你", {"text":"说话的说话时间与聆听的时间相若","value":0,"tag":"E"}, {"text":"聆听的时间会比说话的时间多","value":0,"tag":"I"});
@@ -67,17 +91,38 @@ export class QaComponent implements OnInit {
     this.qaes[47] = new Qas("哪一句较能表达你的看法？", {"text":"三思而后行","value":0,"tag":"P"}, {"text":"犹豫不决必失败","value":0,"tag":"J"});
   }
 
-  ngOnInit() {
-      this.btnText = "下一题";
+  createCards(){
+    for(let i:number = 0;i < 6;i++){
+        this.cards.A[i] = new Card(i,false);
+    }
+    for(let i = 0;i < 6;i++){
+        this.cards.B[i] = new Card(i,false);
+    }
+
+    console.log(this.cards);
+
   }
 
-  onChange(value,tag1,tag2){
-    console.log(value);
-    this.qaes[this.id][tag1].value = value;
+  ngOnInit() {
+      this.btnText = "下一题";
+      this.createCards();
+  }
+
+
+  onChange(target,tag1,tag2){
+    this.qaes[this.id][tag1].value = target.value;
     this.qaes[this.id][tag2].value = 5 - this.qaes[this.id][tag1].value;
 
-    console.log(this.qaes[this.id]);
+    if(this.prevBtn.tag !== ""){
+      this.cards[this.prevBtn.tag][this.prevBtn.value].selected = false; 
+    }
 
+    this.cards[tag1][target.value].selected = true;
+
+    this.prevBtn.value = target.value;
+    this.prevBtn.tag = tag1;
+
+    /*go do ing*/
   }
 
 
@@ -91,6 +136,7 @@ export class QaComponent implements OnInit {
         alert("您尚未选择答案");
     }else{
       this.id+=1;
+      this.cards[this.prevBtn.tag][this.prevBtn.value].selected = false; 
     }
   }
 

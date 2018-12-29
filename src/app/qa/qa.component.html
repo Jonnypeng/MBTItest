@@ -5,23 +5,13 @@
     <li>
       <div class="answer"><span class="badge badge-danger">{{qaes[id].A.value}}分</span><br />A.{{qaes[id].A.text}}</div>
       <div class="numberBox">
-        <input type="button" class="number" value="0" (click)="onChange($event.target.value,'A','B')" />
-        <input type="button" class="number" value="1" (click)="onChange($event.target.value,'A','B')" />
-        <input type="button" class="number" value="2" (click)="onChange($event.target.value,'A','B')" />
-        <input type="button" class="number" value="3" (click)="onChange($event.target.value,'A','B')" />
-        <input type="button" class="number" value="4" (click)="onChange($event.target.value,'A','B')" />
-        <input type="button" class="number" value="5" (click)="onChange($event.target.value,'A','B')" />
+        <input type="button" *ngFor="let card of cards.A"  [ngClass]="{'number':true,'selected':card.selected}" value="{{card.value}}"  (click)="onChange($event.target,'A','B')" />
       </div>
     </li>
     <li>
       <div class="answer"><span class="badge badge-danger">{{qaes[id].B.value}}分</span><br />B.{{qaes[id].B.text}}</div>
       <div class="numberBox">
-        <input type="button" class="number" value="0" (click)="onChange($event.target.value,'B','A')" />
-        <input type="button" class="number" value="1" (click)="onChange($event.target.value,'B','A')" />
-        <input type="button" class="number" value="2" (click)="onChange($event.target.value,'B','A')" />
-        <input type="button" class="number" value="3" (click)="onChange($event.target.value,'B','A')" />
-        <input type="button" class="number" value="4" (click)="onChange($event.target.value,'B','A')" />
-        <input type="button" class="number" value="5" (click)="onChange($event.target.value,'B','A')" />
+        <input type="button" *ngFor="let card of cards.B"  [ngClass]="{'number':true,'selected':card.selected}" value="{{card.value}}"  (click)="onChange($event.target,'B','A')" />
       </div>
     </li>
   </ul>
