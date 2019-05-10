@@ -9,8 +9,10 @@
     "e2e": "ng e2e",
     "build-r": "ng build --prod --output-path dist --base-href /~jonny/html/wx.uvcsi.com/html5/test/w-app/dist/",
     "build": "ng build",
-    "build-github":"ng build --prod --output-path docs --base-href /MBTItest/",
-    "lite-s": "lite-server --baseDir='dist/'"
+    "build-github": "ng build --prod --output-path docs --base-href /MBTItest/",
+    "lite-s": "lite-server --baseDir='dist/'",
+    "build-jonnypeng": "ng build --prod --output-path docs --base-href /demo/MBTItest/docs/",
+    "build-watch-jonnypeng": "ng build --watch --output-path docs --base-href /demo/MBTItest/docs/"
   },
   "private": true,
   "dependencies": {

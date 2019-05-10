@@ -13,6 +13,7 @@ export class ReadmeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(2);
   }
 
   // readMeBtnHandle(){
